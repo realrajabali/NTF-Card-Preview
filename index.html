@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+    <title>NTF Card Preview Component</title>
+
+    <!-- ######## Styling ######## -->
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --main-bg: hsl(217, 54%, 11%);
+            --card-bg: hsl(216, 50%, 16%);
+            --paragraph: hsl(215, 32%, 27%);
+            --white: hsl(0, 0%, 100%);
+            --hover: hsl(178, 100%, 50%);
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        body {
+            background-color: var(--main-bg);
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'outfit', sans-serif;
+        }
+
+        .card-container {
+            background-color: var(--card-bg);
+            height: 500px;
+            width: 300px;
+            border-radius: 15px;
+            padding: 0px 22px;
+        }
+
+        .card-thumbnail {
+            position: relative;
+            margin-top: 14px;
+        }
+
+        .thumbnail {
+            width: 256px;
+            border-radius: 8px;
+        }
+
+        .overly {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: hsla(178, 100%, 50%, .4);
+            height: 100%;
+            width: 100%;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+        }
+
+        .card-thumbnail:hover .overly {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 45%;
+            padding: 10px 0px;
+        }
+
+        .title {
+            font-size: 2rem;
+            color: var(--white);
+            font-weight: 400;
+        }
+
+        .description {
+            font-size: 1.6rem;
+            color: var(--paragraph);
+            font-weight: bold;
+        }
+
+        .eth-time {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .eth{
+            display: flex;
+            align-items: center;
+        }
+
+        .eth span{
+            color: var(--hover);
+            padding: 0px 5px;
+        }
+
+        .time{
+            display: flex;
+            align-items: center;
+        }
+
+        .time span{
+            color: var(--paragraph);
+            padding: 0px 5px;
+        }
+
+        .credit {
+            display: flex;
+            align-items: center;
+            border-top: 1px solid var(--paragraph);
+            padding: 10px 0px;
+        }
+
+        .credit img {
+            width: 36px;
+        }
+
+        .name{
+            padding: 0px 6px;
+            color: var(--paragraph);
+
+        }
+
+        .name span{
+            color: var(--white);
+        }
+
+        .title:hover, .name span:hover{
+            color: var(--hover);
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <main class="card-container">
+        <div class="card-thumbnail">
+            <img src="image-equilibrium.jpg" alt="" class="thumbnail">
+            <div class="overly">
+                <img src="icon-view.svg" alt="">
+            </div>
+        </div>
+        <div class="card-content">
+            <h1 class="title">Equilibrium #3429</h1>
+            <p class="description"> Our Equilibrium collection promotes balance and calm</p>
+            <div class="eth-time">
+                <h2 class="eth">
+                    <img src="icon-ethereum.svg" alt="">
+                    <span> 0.041 ETH</span>
+                </h2>
+                <h2 class="time">
+                    <img src="icon-clock.svg" alt="">
+                    <span>3 days left</span>
+                </h2>
+            </div>
+            <div class="credit">
+                <img src="image-avatar.png" alt="">
+                <h2 class="name">Creation of <span>Jules Wyvern</span></h2>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
